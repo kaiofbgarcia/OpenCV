@@ -5,7 +5,7 @@ from numpy import binary_repr
 
 imagem = cv2.imread("img/moedaSala.jpg")          # Carregar a imagem
 crop_img = imagem[80:630, 70:415]                 # Corte da imagem
-gray = cv2.cvtColor(crop_img, cv2.COLOR_BGR2GRAY) # GrayScale
+gray = cv2.cvtColor(crop_img, cv2.COLOR_BGR2GRAY)     # GrayScale
 blur = cv2.blur(gray,(8,8))                       # Blur
 
 ret,binary = cv2.threshold(blur ,127,255, cv2.THRESH_BINARY)         # Binarização
@@ -19,10 +19,6 @@ cont = len(contours)                                                            
     
 print("Numero de Objetos Encontrados: ",cont)
 
-
 cv2.imshow("Image", dilation)
-
-
-
 
 cv2.waitKey(0)
