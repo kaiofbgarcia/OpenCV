@@ -3,6 +3,8 @@ import pytesseract
 from gtts import gTTS
 import os
 
+#Leitor de Textos em imagens (Memes): a imagem é lida e o texto encontrado é reproduzido via mp3
+
 pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
 
 img = cv2.imread("img/meme.jpeg")
