@@ -8,7 +8,7 @@ res = cv2.resize(imagem, dsize=( 658, 494), interpolation=cv2.INTER_CUBIC) # Red
 gray = cv2.cvtColor(res, cv2.COLOR_BGR2GRAY)     # GrayScale
 blur = cv2.blur(gray,(3,3))                       # Blur ###############
 
-ret,binary = cv2.threshold(blur , 65 ,255, cv2.THRESH_BINARY)         # Binarização ################
+ret,binary = cv2.threshold(blur , 65 ,255, cv2.THRESH_OTSU)         # Binarização ################
 ret1,binary1 = cv2.threshold(binary,127,255,cv2.THRESH_BINARY_INV)   # Inverter a Binarização
 
 

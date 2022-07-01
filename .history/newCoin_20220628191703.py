@@ -13,7 +13,7 @@ ret1,binary1 = cv2.threshold(binary,127,255,cv2.THRESH_BINARY_INV)   # Inverter 
 
 
 kernel = np.ones((5,5), np.uint8)
-dilation = cv2.dilate(binary1, kernel, iterations=4)   # Dilatar ####################
+dilation = cv2.dilate(binary1, kernel, iterations=5)   # Dilatar ####################
 
 contours, hierarchy = cv2.findContours(dilation, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE) # Procura os Objetos
 cont = len(contours)                                                                     # Conta os Objetos
@@ -21,7 +21,7 @@ cv2.drawContours(res, contours, -1, (0,255,0), 3)
 
 print("Numero de Objetos Encontrados: ",cont)
 
-cv2.imshow("Dilatation", binary1)
+cv2.imshow("Dilatation", binary)
 
 
 cv2.waitKey(0)

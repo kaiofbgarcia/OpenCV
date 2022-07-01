@@ -21,7 +21,7 @@ cv2.drawContours(res, contours, -1, (0,255,0), 3)
 
 print("Numero de Objetos Encontrados: ",cont)
 
-cv2.imshow("Dilatation", binary1)
+cv2.imshow("Dilatation", binary)
 
 
 cv2.waitKey(0)
