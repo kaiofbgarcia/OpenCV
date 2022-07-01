@@ -13,7 +13,7 @@ ret1,binary1 = cv2.threshold(binary,127,255, cv2.THRESH_BINARY_INV)   # Inverter
 
 kernel = np.ones((5,5), np.uint8)                   # Erosão
 erosion = cv2.erode(binary1, kernel, iterations=1)  # Erosão
-dilation = cv2.dilate(erosion, kernel, iterations=1)
+dilation = cv2.dilate(erosion, kernel, iterations=1) #Dilatação
 
 contours, hierarchy = cv2.findContours(dilation, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE) # Procura os Objetos
 cont = len(contours)                                                                     # Conta os Objetos
