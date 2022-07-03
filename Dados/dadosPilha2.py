@@ -18,10 +18,18 @@ dilation = cv2.dilate(erosion, kernel, iterations=1) #Dilatação
 contours, hierarchy = cv2.findContours(dilation, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE) # Procura os Objetos
 cont = len(contours)                                                                     # Conta os Objetos
 
-cv2.drawContours(imagem, contours, -1, (0,255,0), 3) 
+cv2.imshow("Resize", imagem) # Printa sem o desenho 
 
-print("Resultado dos dados: ", cont)
+cv2.drawContours(imagem, contours, -1, (0,255,0), 3)     # Desenha os Objetos
 
-cv2.imshow("Dilatation", imagem)
+print("Resultado dos dados: ", cont)  # Mostra o resultado
+
+cv2.imshow("Grayscale", gray)             # Mostra a imagem cinza
+cv2.imshow("Blur", blur)                  # Mostra a imagem borrada
+cv2.imshow("Threshold", binary)           # Mostra a imagem primeira binarização
+cv2.imshow("Threshold Inv", binary1)      # Mostra a imagem segunda binarização
+cv2.imshow("Erode", erosion)              # Mostra a imagem apos erosão
+cv2.imshow("Dilatation", dilation)        # Mostra a imagem apos dilatação
+cv2.imshow("Draw", imagem)                # Mostra a imagem(com o desenho já)
 
 cv2.waitKey(0)
