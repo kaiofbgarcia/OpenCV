@@ -18,17 +18,16 @@ erosion = cv2.erode(binary1, kernel, iterations=1)  # Erosão
 contours, hierarchy = cv2.findContours(erosion, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE) # Procura os Objetos
 cont = len(contours)                                                                     # Conta os Objetos
 
-cv2.imshow("Resize", res)
+cv2.imshow("Resize", res) # Printa sem o desenho 
 
-cv2.drawContours(res, contours, -1, (0,255,0), 3) 
+cv2.drawContours(res, contours, -1, (0,255,0), 3) # Desenha os Objetos
 
 print("Resultado dos dados: ", cont)
-
-cv2.imshow("Grayscale", gray)
-cv2.imshow("Blur", blur)
-cv2.imshow("Threshold", binary)
-cv2.imshow("Threshold Inv", binary1)
-cv2.imshow("Erode", erosion)
-cv2.imshow("Draw", res)
+cv2.imshow("Grayscale", gray)             # Mostra a imagem cinza
+cv2.imshow("Blur", blur)                  # Mostra a imagem borrada
+cv2.imshow("Threshold", binary)           # Mostra a imagem primeira binarização
+cv2.imshow("Threshold Inv", binary1)      # Mostra a imagem segunda binarização
+cv2.imshow("Erode", erosion)              # Mostra a imagem apos erosão
+cv2.imshow("Draw", res)                   # Mostra a imagem(com o desenho já)
 
 cv2.waitKey(0)
